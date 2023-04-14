@@ -1,0 +1,747 @@
+{
+	"info": {
+		"_postman_id": "faaeca32-c5c9-41dc-916a-e05b581b147c",
+		"name": "HubPay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25812709"
+	},
+	"item": [
+		{
+			"name": "Bank Callback",
+			"item": [
+				{
+					"name": "Bank Transfer Status Notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"referenceId\": \"961D9DDEC1275\",\n    \"status\": \"SUCCESS\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/external/banking/notify-transfer-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"external",
+								"banking",
+								"notify-transfer-status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"referenceId\": \"961D9DDEC1275\",\n    \"status\": \"SUCCESS\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/external/banking/notify-transfer-status",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"external",
+										"banking",
+										"notify-transfer-status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Apr 2023 08:47:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Get Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions/all?walletId=434632783470633724&customerId=434632783470633723&pageNumber=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"all"
+							],
+							"query": [
+								{
+									"key": "walletId",
+									"value": "434632783470633724"
+								},
+								{
+									"key": "customerId",
+									"value": "434632783470633723"
+								},
+								{
+									"key": "pageNumber",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "BUSINESS ERROR",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/transactions/all?walletId=434620675409151281&customerId=434632783470633723&pageNumber=0&size=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"transactions",
+										"all"
+									],
+									"query": [
+										{
+											"key": "walletId",
+											"value": "434620675409151281"
+										},
+										{
+											"key": "customerId",
+											"value": "434632783470633723"
+										},
+										{
+											"key": "pageNumber",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Apr 2023 08:58:51 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"NOT_FOUND\",\n    \"message\": \"Wallet not found\"\n}"
+						},
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/transactions/all?walletId=434632783470633724&customerId=434632783470633723&pageNumber=0&size=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"transactions",
+										"all"
+									],
+									"query": [
+										{
+											"key": "walletId",
+											"value": "434632783470633724"
+										},
+										{
+											"key": "customerId",
+											"value": "434632783470633723"
+										},
+										{
+											"key": "pageNumber",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Apr 2023 09:04:00 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"totalCount\": 2,\n    \"totalPages\": 1,\n    \"pageNumber\": 0,\n    \"numberOfElements\": 2,\n    \"data\": [\n        {\n            \"id\": 434636175504944618,\n            \"referenceId\": \"961D9DDEC12275\",\n            \"type\": \"BANK_TRANSFER\",\n            \"entry\": \"WITHDRAW\",\n            \"status\": \"PENDING\",\n            \"createdAt\": \"2023-04-14T12:48:59.390617\",\n            \"amount\": {\n                \"currency\": \"GBP\",\n                \"value\": 10\n            }\n        },\n        {\n            \"id\": 434635242272303833,\n            \"referenceId\": \"961D9DDEC1275\",\n            \"type\": \"BANK_TRANSFER\",\n            \"entry\": \"DEPOSIT\",\n            \"status\": \"SUCCESS\",\n            \"createdAt\": \"2023-04-14T12:45:16.890946\",\n            \"amount\": {\n                \"currency\": \"GBP\",\n                \"value\": 10\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Wallet",
+			"item": [
+				{
+					"name": "Create Deposit Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"walletId\": 434632783470633724,\n    \"customerId\": 434632783470633723,\n    \"referenceId\": \"961D9DDEC1275\",\n    \"amount\": {\n        \"currency\": \"GBP\",\n        \"value\": 10\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/wallet/deposit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"wallet",
+								"deposit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"walletId\": 434620675409151281,\n    \"customerId\": 434620675409151280,\n    \"referenceId\": \"961D9DDEC075\",\n    \"amount\": {\n        \"currency\": \"GBP\",\n        \"value\": 10\n    }\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/wallet/deposit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										"deposit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Apr 2023 07:47:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"transactionId\": 434620754429837743,\n    \"status\": \"PENDING\"\n}"
+						},
+						{
+							"name": "VALIDATION ERROR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"walletId\": null,\n    \"customerId\": null,\n    \"referenceId\": \"\",\n    \"amount\": null\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/wallet/deposit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										"deposit"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Apr 2023 08:35:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"VALIDATION_FAILED\",\n    \"message\": \"Validation failed for object='depositRequestDto'. Error count: 4\",\n    \"fieldErrors\": [\n        {\n            \"code\": \"REQUIRED_NOT_NULL\",\n            \"message\": \"must not be null\",\n            \"property\": \"walletId\",\n            \"rejectedValue\": null,\n            \"path\": \"walletId\"\n        },\n        {\n            \"code\": \"REQUIRED_NOT_NULL\",\n            \"message\": \"must not be null\",\n            \"property\": \"amount\",\n            \"rejectedValue\": null,\n            \"path\": \"amount\"\n        },\n        {\n            \"code\": \"REQUIRED_NOT_BLANK\",\n            \"message\": \"must not be blank\",\n            \"property\": \"referenceId\",\n            \"rejectedValue\": \"\",\n            \"path\": \"referenceId\"\n        },\n        {\n            \"code\": \"REQUIRED_NOT_NULL\",\n            \"message\": \"must not be null\",\n            \"property\": \"customerId\",\n            \"rejectedValue\": null,\n            \"path\": \"customerId\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "BUSINESS ERROR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"walletId\": 434632783470633724,\n    \"customerId\": 434632783470633724,\n    \"referenceId\": \"2E194E66FE42\",\n    \"amount\": {\n        \"currency\": \"GBP\",\n        \"value\": 10001\n    }\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/wallet/deposit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										"deposit"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Apr 2023 08:39:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"AMOUNT_NOT_WITHIN_LIMIT\",\n    \"message\": \"Invalid deposit amount. Max limit is '10000' and Min limit is '10'\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Withdraw Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"walletId\": 434632783470633724,\n    \"customerId\": 434632783470633723,\n    \"referenceId\": \"961D9DDEC12275\",\n    \"amount\": {\n        \"currency\": \"GBP\",\n        \"value\": 10\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/wallet/withdraw",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"wallet",
+								"withdraw"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "BUSINESS_ERROR",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"walletId\": 434632783470633724,\n    \"customerId\": 434632783470633723,\n    \"referenceId\": \"961D9DDEC1275\",\n    \"amount\": {\n        \"currency\": \"GBP\",\n        \"value\": 10\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/wallet/withdraw",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										"withdraw"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Apr 2023 08:43:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"INSUFFICIENT_FUNDS\",\n    \"message\": \"Not enough fundsToWithdraw. Remaining balance is only GBP 0.0000\"\n}"
+						},
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"walletId\": 434632783470633724,\n    \"customerId\": 434632783470633723,\n    \"referenceId\": \"961D9DDEC12275\",\n    \"amount\": {\n        \"currency\": \"GBP\",\n        \"value\": 10\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/wallet/withdraw",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										"withdraw"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Apr 2023 08:48:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"transactionId\": 434636175504944618,\n    \"status\": \"PENDING\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Wallet Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/wallet/123/customer/434632783470633723",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"wallet",
+								"123",
+								"customer",
+								"434632783470633723"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/wallet/434632783470633724/customer/434632783470633723",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										"434632783470633724",
+										"customer",
+										"434632783470633723"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Apr 2023 08:51:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"walletId\": 434632783470633724,\n    \"customerId\": 434632783470633723,\n    \"totalBalance\": {\n        \"currency\": \"GBP\",\n        \"value\": 0\n    },\n    \"amountOnHold\": {\n        \"currency\": \"GBP\",\n        \"value\": 10\n    }\n}"
+						},
+						{
+							"name": "BUSINESS ERROR",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/wallet/123/customer/434632783470633723",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										"123",
+										"customer",
+										"434632783470633723"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Apr 2023 08:53:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"NOT_FOUND\",\n    \"message\": \"Wallet not found\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

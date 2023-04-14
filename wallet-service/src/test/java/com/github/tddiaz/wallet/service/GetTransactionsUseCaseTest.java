@@ -81,6 +81,7 @@ class GetTransactionsUseCaseTest {
                 depositTransaction.getReferenceId(),
                 depositTransaction.getType().name(),
                 depositTransaction.getEntry().name(),
+                depositTransaction.getStatus().name(),
                 depositTransaction.getCreatedAt(),
                 new MoneyDto(depositTransaction.getAmount().getCurrency(), depositTransaction.getAmount().getAmount())
             )

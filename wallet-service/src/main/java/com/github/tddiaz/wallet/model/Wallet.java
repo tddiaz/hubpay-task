@@ -61,7 +61,7 @@ public class Wallet {
         }
 
         if (fundsToWithdraw.isGreaterThan(this.balance)) {
-            throw new InsufficientFundsException("Not enough fundsToWithdraw. Remaining balance is only " + this.balance.toFormattedString());
+            throw new InsufficientFundsException("Not enough funds to withdraw. Remaining balance is only " + this.balance.toFormattedString());
         }
 
         this.balance = this.balance.subtract(fundsToWithdraw);

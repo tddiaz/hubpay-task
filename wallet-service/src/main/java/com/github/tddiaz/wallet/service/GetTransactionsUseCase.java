@@ -35,6 +35,7 @@ public class GetTransactionsUseCase {
                 transaction.getReferenceId(),
                 transaction.getType().name(),
                 transaction.getEntry().name(),
+                transaction.getStatus().name(),
                 transaction.getCreatedAt(),
                 new MoneyDto(transaction.getAmount().getCurrency(), transaction.getAmount().getAmount())
             )).toList();

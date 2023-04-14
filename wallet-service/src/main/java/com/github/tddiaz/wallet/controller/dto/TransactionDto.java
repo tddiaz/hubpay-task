@@ -7,8 +7,8 @@ public record TransactionDto(
     String referenceId,
     String type,
     String entry,
+    String status,
     LocalDateTime createdAt,
-
     MoneyDto amount
 ) {
 }
