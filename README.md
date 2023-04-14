@@ -96,7 +96,11 @@ make stop-app
 
 ### Deposit
 
+![deposit-wf](.images/deposit-wf.png)
+
 ### Withdraw
+
+![withdraw-wf](.images/withdraw-wf.png)
 
 ## Idempotency
 A `referenceId` field is provided for deposit/withdrawal API request. The `referenceId` value is assumed as the reference number returned from the bank transfer integration.
