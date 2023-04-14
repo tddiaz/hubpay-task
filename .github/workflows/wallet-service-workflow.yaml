@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
     paths:
       - wallet-service/**
 
@@ -44,6 +44,6 @@ jobs:
         if: ${{ always() }}
         uses: scacap/action-surefire-report@v1
         with:
-          report_paths: 'wallet-service/user-identity-service/target/failsafe-reports/TEST-*.xml'
+          report_paths: 'wallet-service/target/failsafe-reports/TEST-*.xml'
           check_name: Integration Test Report
           fail_on_test_failures: true
