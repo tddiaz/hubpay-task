@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15.2
+    container_name: hubpay_db
+    restart: always
+    environment:
+      POSTGRES_DB: 'hubpay'
+      POSTGRES_USER: 'hubpay'
+      POSTGRES_PASSWORD: 'hubpay'
+    ports:
+      - '5432:5432'
+    expose:
+      - '5432'
+    volumes:
+      - ~/hubpay-task-data:/var/lib/postgresql/data
+networks:
+  default:
+    name: hubpay-local-db

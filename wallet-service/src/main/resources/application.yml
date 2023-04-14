@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hubpay
+    username: hubpay
+    password: hubpay
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+
+supported-currencies:
+  values:
+    - 'GBP'
+
+limits:
+  deposit:
+    max: 10000
+    min: 10
+  withdraw:
+    max: 5000
+    min: 0.1
+
+error:
+  handling:
+    log-levels:
+      4xx: WARN
+      5xx: ERROR
+    full-stacktrace-http-statuses:
+      - 5xx
+    full-stacktrace-classes: com.github.tddiaz.wallet.exception.AppException
+    codes:
+      ValidCurrency: INVALID_CURRENCY_CODE
+      ValidEnum: INVALID_ENUM
