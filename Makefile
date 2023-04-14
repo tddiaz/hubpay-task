@@ -12,3 +12,9 @@ build-with-tests:
 
 build-image:
 	./mvnw -B -f wallet-service spring-boot:build-image -DskipTests
+
+run-app:
+	docker-compose up -d
+
+stop-app:
+	docker-compose down

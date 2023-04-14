@@ -24,7 +24,7 @@
 # Run and Build
 
 ## Build the Project
-This command will build the wallet-service without running the test
+This command will build the `wallet-service` without running the test
 ```
 make build
 ```
@@ -33,7 +33,7 @@ With tests (Unit and Integration Tests)
 ```
 make build-with-tests
 ```
-*Note*: The tests includes integration tests running iwth embedded PostgresDB using container, so make sure docker is running.
+*Note*: The tests includes integration tests running with embedded PostgresDB using container, so make sure docker is running.
 
 ### Test Container Issues
 In Mac OS, If you encounter an error saying 'docker environment is not available' even though docker is running,
@@ -70,9 +70,21 @@ make stop-local-db
 make build-image
 ```
 
-verify that the wallet-service image is created, run:
+verify that the `wallet-service` image is created, run:
 ```
 docker images
+```
+
+2. Run docker compose
+
+ - Run the wallet-service and postgresDB as containers
+```
+make run-app
+```
+
+ - To stop
+```
+make stop-app
 ```
 
 # Implementation Details

@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  postgres-db:
+    image: postgres:15.2
+    restart: always
+    environment:
+      POSTGRES_DB: 'hubpay'
+      POSTGRES_USER: 'hubpay'
+      POSTGRES_PASSWORD: 'hubpay'
+    ports:
+      - '5432:5432'
+    volumes:
+      - ~/hubpay-task-data:/var/lib/postgresql/data
+  app-service:
+    image: docker.io/library/wallet-service:0.0.1-SNAPSHOT
+    depends_on:
+      - postgres-db
+    restart: always
+    links:
+      - postgres-db:postgres-db
+    environment:
+      DB_HOST: 'postgres-db'
+    ports:
+      - '8080:8080'
