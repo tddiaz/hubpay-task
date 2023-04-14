@@ -390,3 +390,11 @@ ex: `TEST DATA`
 You can view the test reports on Github Actions
 
 ![test-reports](.images/test-reports.png)
+
+### Integration Tests Report
+
+![it-report](.images/it-report.png)
+
+### Unit Tests Report
+
+![ut-report](.images/ut-report.png)
