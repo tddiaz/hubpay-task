@@ -1,3 +1,5 @@
+[![Wallet Service](https://github.com/tddiaz/hubpay-task/actions/workflows/wallet-service-workflow.yaml/badge.svg)](https://github.com/tddiaz/hubpay-task/actions/workflows/wallet-service-workflow.yaml)
+
 # Added Assumptions
 1. Deposit and withdrawing of funds via a Bank Transfer.
 2. A callback API is provided for the custody bank (where the customer funds are held) to call and notify the status of the deposit/withdrawal requests whether it's a success or fail. For the purpose of testing, the callback API should be called manually to complete the flow.
@@ -20,6 +22,7 @@
 - [Spring Boot Error Handling Library](https://wimdeblauwe.github.io/error-handling-spring-boot-starter/4.1.0/) - autoconfigures controller advice and standardize error response body.
 - RestAssured - for API tests
 - TestContainers - embedded Postgres DB for integration test
+- Github Actions - for CI/CD
 
 # Run and Build
 
