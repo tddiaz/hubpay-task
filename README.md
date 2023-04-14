@@ -385,3 +385,8 @@ ex: `TEST DATA`
 
 ### Withdraw Flow
 [WithdrawFlowConcurrencyIT](https://github.com/tddiaz/hubpay-task/blob/main/wallet-service/src/test/java/com/github/tddiaz/wallet/service/WithdrawFlowConcurrencyIT.java)
+
+### Test Reports
+You can view the test reports on Github Actions
+
+![test-reports](.images/test-reports.png)
